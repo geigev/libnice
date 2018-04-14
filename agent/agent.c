@@ -2313,6 +2313,7 @@ void agent_signal_new_remote_candidate (NiceAgent *agent, NiceCandidate *candida
       candidate);
   agent_queue_signal (agent, signals[SIGNAL_NEW_REMOTE_CANDIDATE],
       candidate->stream_id, candidate->component_id, candidate->foundation);
+  conn_check_schedule_next (agent);
 }
 
 NICEAPI_EXPORT const gchar *
